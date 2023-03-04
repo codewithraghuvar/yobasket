@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addProduct, removeProduct } from './redux/productSlice';
-import { addToCart } from './redux/cartSlice';
+import { addProduct, removeProduct } from '../../redux/productSlice';
+import { addToCart } from '../../redux/cartSlice';
 
 function ProductList() {
   const dispatch = useDispatch();
@@ -10,7 +10,8 @@ function ProductList() {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
 
-  const handleAddProduct = () => {
+  const handleAddProduct = (e) => {
+    e.preventDefault()
     dispatch(addProduct({ id: Math.random(), name, price }));
   };
 

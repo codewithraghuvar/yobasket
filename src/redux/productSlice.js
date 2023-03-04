@@ -11,6 +11,7 @@ const productSlice = createSlice({
     addProduct: (state, action) => {
       const { id, name, price } = action.payload;
       state.push({ id, name, price });
+      return state
     },
     removeProduct: (state, action) => {
       const id = action.payload;
